@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChatScreenActivity"
+    android:background="#4497fd">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/conversation"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        android:clipChildren="true"
+        android:clipToPadding="true"
+        android:layout_marginBottom="60dp"
+        android:layout_alignParentBottom="true"
+        android:textSize="16sp" />
+
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/userInput"
+            android:layout_width="290dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="7dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/bg_edit_text"
+            android:fontFamily="@font/montserrat"
+            android:hint="Type something"
+            android:imeActionId="4"
+            android:imeOptions="actionSend"
+            android:inputType="textCapSentences|textNoSuggestions|textMultiLine"
+            android:maxLength="256"
+            android:maxLines="4"
+            android:padding="12dp"
+            android:singleLine="false"
+            android:textColor="#fff"
+            android:textColorHint="#fff"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/send"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <ImageView
+            android:id="@+id/mic"
+            android:layout_width="34dp"
+            android:layout_height="33dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="16dp"
+            android:onClick="buttonClick"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/send"
+            app:srcCompat="@drawable/micc" />
+
+        <ImageView
+            android:id="@+id/send"
+            android:layout_width="34dp"
+            android:layout_height="33dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginEnd="7dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/mic"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/userInput"
+            app:srcCompat="@drawable/sic" />
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</RelativeLayout>
